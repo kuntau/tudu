@@ -1,0 +1,22 @@
+<div class="main-tudu text-center">
+  <h1>Mai Tudu</h1>
+  <hr />
+  <p>You now have {{tudus.length}} todos left!</p>
+  <div ui-sortable>
+    <p ng-repeat="tudu in tudus" >
+	  <small class="link">{{$index+1}}.</small>
+	  <input type="text" ng-model="tudu" size="10"/>
+	  <a class="link" ng-click="removeTudu($index)"><i class="icon-remove-sign"></i></a>
+  	  <!-- <a class="btn btn-warning" ng-click="removeTudu($index)" >x</a> -->
+    </p>
+  </div>
+  <form ng-submit="addTudu()" >
+	<div class="control form-inline">
+	  <i class="icon-heart"> </i>
+	  <input type="text" ng-model="tudu" placeholder="Enter todo" />
+	  <input type="submit" class="btn btn-primary" value="Add"/>
+	</div>
+  </form>
+  <hr />
+  <h3 class="text-center">Enjoy todoing!!<h3>
+</div>
