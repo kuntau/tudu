@@ -1,13 +1,14 @@
-<div class="main-tudu text-center">
+<div class="main-tudu">
   <h1>Mai Tudu</h1>
   <hr />
-  <p>You now have {{tudus.length}} todos left!</p>
+  <p>You now have {{totalTudus()}} left!</p>
   <div ui-sortable>
     <p ng-repeat="tudu in tudus" >
-	  <small class="link">{{$index+1}}.</small>
-	  <input type="text" ng-model="tudu" size="10"/>
+	  <small>{{$index+1}}.</small>
+    <input type="checkbox" ng-model="tudu.done" />
+	  <input type="text" ng-model="tudu.item" size="10"/>
+    <a class="link" ng-click="editTudu($index)"><i class="icon-edit"></i></a>
 	  <a class="link" ng-click="removeTudu($index)"><i class="icon-remove-sign"></i></a>
-  	  <!-- <a class="btn btn-warning" ng-click="removeTudu($index)" >x</a> -->
     </p>
   </div>
   <form ng-submit="addTudu()" >

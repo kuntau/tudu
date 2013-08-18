@@ -1,0 +1,23 @@
+{
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				".bowerrc",
+				".editorconfig",
+				".gitattributes",
+				".gitignore",
+				".jshintrc",
+				".travis.yml"
+			],
+			"folder_exclude_patterns":
+			[
+				"node_modules",
+				"app/bower_components"
+			],
+			"follow_symlinks": true,
+			"path": "/Users/kuntau/Coding/Tudu"
+		}
+	]
+}
