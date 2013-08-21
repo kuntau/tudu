@@ -2,8 +2,8 @@
   "name": "Tudu",
   "version": "0.0.0",
   "dependencies": {
-    "angular-unstable": "latest",
-    "angular-bootstrap": "latest",
+    "angular-unstable": "~1.1.5",
+    "angular-bootstrap": "~0.4.0",
     "json3": "~3.2.4",
     "jquery": "~1.9.1",
     "bootstrap-sass": "~2.3.1",

@@ -1,5 +1,6 @@
-// Generated on 2013-08-13 using generator-angular 0.3.1
+// Generated on 2013-07-16 using generator-angular 0.3.0
 'use strict';
+
 var path = require('path');
 
 // # Globbing
@@ -132,6 +133,11 @@ module.exports = function (grunt) {
         }
       }
     },
+    // not used since Uglify task does concat,
+    // but still available if needed
+    /*concat: {
+      dist: {}
+    },*/
     rev: {
       dist: {
         files: {
@@ -163,16 +169,6 @@ module.exports = function (grunt) {
           expand: true,
           cwd: '<%= yeoman.app %>/images',
           src: '{,*/}*.{png,jpg,jpeg}',
-          dest: '<%= yeoman.dist %>/images'
-        }]
-      }
-    },
-    svgmin: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>/images',
-          src: '{,*/}*.svg',
           dest: '<%= yeoman.dist %>/images'
         }]
       }
@@ -223,7 +219,7 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '.htaccess',
             'bower_components/**/*',
-            'images/{,*/}*.{gif,webp}',
+            'images/{,*/}*.{gif,webp,svg}',
             'styles/fonts/*'
           ]
         }, {
@@ -249,7 +245,6 @@ module.exports = function (grunt) {
         'coffee',
         'compass:dist',
         'imagemin',
-        'svgmin',
         'htmlmin'
       ]
     },

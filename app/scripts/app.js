@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('TuduApp', ['ui'])
+angular.module('TuduApp',  ['ui.bootstrap'])
   .service('$flash', function($rootScope) {
     this.show = function(message) {
       $rootScope.flash = message;
@@ -101,11 +101,15 @@ angular.module('TuduApp', ['ui'])
       }
     });
   })
-  .config(function ($routeProvider) {
+  .config(function($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
+      })
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl'
       })
       .when('/login', {
         templateUrl: 'views/login.html',
