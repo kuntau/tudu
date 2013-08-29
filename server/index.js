@@ -1,3 +1,5 @@
+'use strict';
+
 var express = require('express');
 var path = require('path');
 
@@ -21,8 +23,8 @@ app.use(express.bodyParser());
 // Add csrf support
 app.use(express.csrf({value: Authentication.csrf}));
 app.use(function(req, res, next) {
-   res.cookie('XSRF-TOKEN', req.session._csrf);
-   next();
+  res.cookie('XSRF-TOKEN', req.session._csrf);
+  next();
 });
 
 // setup passport authentication

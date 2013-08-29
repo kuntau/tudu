@@ -35,12 +35,12 @@ angular.module('TuduApp')
       return $scope.tudus.length + ($scope.tudus.length > 1 ? ' tudus' : ' tudu');
     };
 
-    $scope.modal = function() {
-      $dialog.dialog().open('views/modal.html', 'MainModalCtrl');
-    };
   })
   .controller('MainModalCtrl', function($scope, dialog) {
     $scope.close = function() {
       dialog.close('ok');
+    };
+    $scope.modal = function() {
+      dialog.dialog().open('views/modal.html', 'MainModalCtrl');
     };
   });

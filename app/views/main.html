@@ -4,19 +4,19 @@
   <p>You now have {{totalTudus()}} left!</p>
   <div ui-sortable>
     <p ng-repeat="tudu in tudus" >
-	  <small>{{$index+1}}.</small>
+      <small>{{$index+1}}.</small>
     <input type="checkbox" ng-model="tudu.done" />
-	  <input type="text" ng-model="tudu.item" size="10"/>
+      <input type="text" ng-model="tudu.item" size="10"/>
     <a class="link" ng-click="editTudu($index)"><i class="icon-edit"></i></a>
-	  <a class="link" ng-click="removeTudu($index)"><i class="icon-remove-sign"></i></a>
+      <a class="link" ng-click="removeTudu($index)"><i class="icon-remove-sign"></i></a>
     </p>
   </div>
   <form ng-submit="addTudu()" >
-	<div class="control form-inline">
-	  <i class="icon-heart"> </i>
-	  <input type="text" ng-model="tudu" placeholder="Enter todo" />
-	  <input type="submit" class="btn btn-primary" value="Add"/>
-	</div>
+    <div class="control form-inline">
+      <i class="icon-heart"> </i>
+      <input type="text" ng-model="tudu" placeholder="Enter todo" />
+      <input type="submit" class="btn btn-primary" value="Add"/>
+    </div>
   </form>
   <hr />
   <h3 class="text-center">Enjoy todoing!!<h3>
