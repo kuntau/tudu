@@ -2,12 +2,12 @@
 
 var _ = require('lodash');
 
-var users = [ 
+var users = [
   {
-    id: 1,
+    id:       1,
     username: 'admin',
     password: 'pass',
-    role: 'ADMIN'
+    role:     'ADMIN'
   },
   {
     id: 2,

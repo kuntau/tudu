@@ -34,9 +34,13 @@ module.exports = function (grunt) {
         files: ['test/spec/{,*/}*.coffee'],
         tasks: ['coffee:test']
       },
-      compass: {
-        files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-        tasks: ['compass:server']
+      livereload: {
+        options: { livereload:true },
+        files: [
+          '<%= yeoman.app %>/{,*/}*.html',
+          '<%= yeoman.app %>/scripts/{,*/}*.js',
+          '<%= yeoman.app %>/{,*/}*.css',
+        ]
       }
     },
     express: {
@@ -112,32 +116,6 @@ module.exports = function (grunt) {
         }]
       }
     },
-    compass: {
-      options: {
-        sassDir: '<%= yeoman.app %>/styles',
-        cssDir: '.tmp/styles',
-        generatedImagesDir: '.tmp/images/generated',
-        imagesDir: '<%= yeoman.app %>/images',
-        javascriptsDir: '<%= yeoman.app %>/scripts',
-        fontsDir: '<%= yeoman.app %>/styles/fonts',
-        importPath: '<%= yeoman.app %>/bower_components',
-        httpImagesPath: '/images',
-        httpGeneratedImagesPath: '/images/generated',
-        httpFontsPath: '/styles/fonts',
-        relativeAssets: false
-      },
-      dist: {},
-      server: {
-        options: {
-          debugInfo: true
-        }
-      }
-    },
-    // not used since Uglify task does concat,
-    // but still available if needed
-    /*concat: {
-      dist: {}
-    },*/
     rev: {
       dist: {
         files: {
@@ -234,8 +212,7 @@ module.exports = function (grunt) {
     },
     concurrent: {
       server: [
-        'coffee:dist',
-        'compass:server'
+        'coffee:dist'
       ],
       test: [
         'coffee',
@@ -305,7 +282,6 @@ module.exports = function (grunt) {
     'clean:dist',
     'useminPrepare',
     'concurrent:dist',
-    'concat',
     'copy',
     'cdnify',
     'ngmin',
